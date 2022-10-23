@@ -1,0 +1,106 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001b2e5a6c650 .scope module, "DataMem_tb" "DataMem_tb" 2 4;
+ .timescale -9 -9;
+v000001b2e5a66b80_0 .var "address", 31 0;
+v000001b2e5a66c20_0 .var "clk", 0 0;
+v000001b2e5a66cc0_0 .var "memRead", 0 0;
+v000001b2e5a66d60_0 .var "memWrite", 0 0;
+v000001b2e58f3ae0_0 .net "readData", 31 0, v000001b2e5a66a40_0;  1 drivers
+v000001b2e58f3b80_0 .var "writeData", 31 0;
+S_000001b2e5a6c7e0 .scope module, "uut" "DataMem" 2 10, 3 1 0, S_000001b2e5a6c650;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "memWrite";
+    .port_info 2 /INPUT 1 "memRead";
+    .port_info 3 /INPUT 32 "address";
+    .port_info 4 /INPUT 32 "writeData";
+    .port_info 5 /OUTPUT 32 "readData";
+v000001b2e5a67000_0 .net "address", 31 0, v000001b2e5a66b80_0;  1 drivers
+v000001b2e5a69890_0 .net "clk", 0 0, v000001b2e5a66c20_0;  1 drivers
+v000001b2e5a6c970_0 .net "memRead", 0 0, v000001b2e5a66cc0_0;  1 drivers
+v000001b2e5a6ca10_0 .net "memWrite", 0 0, v000001b2e5a66d60_0;  1 drivers
+v000001b2e5a669a0 .array "memory", 0 1023, 31 0;
+v000001b2e5a66a40_0 .var "readData", 31 0;
+v000001b2e5a66ae0_0 .net "writeData", 31 0, v000001b2e58f3b80_0;  1 drivers
+E_000001b2e58f8910 .event posedge, v000001b2e5a69890_0;
+    .scope S_000001b2e5a6c7e0;
+T_0 ;
+    %wait E_000001b2e58f8910;
+    %load/vec4 v000001b2e5a6ca10_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %load/vec4 v000001b2e5a66ae0_0;
+    %ix/getv 3, v000001b2e5a67000_0;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v000001b2e5a669a0, 0, 4;
+T_0.0 ;
+    %load/vec4 v000001b2e5a6c970_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.2, 8;
+    %ix/getv 4, v000001b2e5a67000_0;
+    %load/vec4a v000001b2e5a669a0, 4;
+    %assign/vec4 v000001b2e5a66a40_0, 0;
+T_0.2 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_000001b2e5a6c650;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001b2e5a66c20_0, 0, 1;
+    %delay 10, 0;
+    %load/vec4 v000001b2e5a66c20_0;
+    %inv;
+    %store/vec4 v000001b2e5a66c20_0, 0, 1;
+    %delay 10, 0;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_000001b2e5a6c650;
+T_2 ;
+    %vpi_call 2 19 "$dumpfile", "DataMem_tb.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001b2e5a6c650 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001b2e5a66d60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001b2e5a66cc0_0, 0, 1;
+    %pushi/vec4 35, 0, 32;
+    %store/vec4 v000001b2e5a66b80_0, 0, 32;
+    %pushi/vec4 18, 0, 32;
+    %store/vec4 v000001b2e58f3b80_0, 0, 32;
+    %delay 20, 0;
+    %pushi/vec4 31, 0, 32;
+    %store/vec4 v000001b2e5a66b80_0, 0, 32;
+    %pushi/vec4 21, 0, 32;
+    %store/vec4 v000001b2e58f3b80_0, 0, 32;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001b2e5a66d60_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001b2e5a66cc0_0, 0, 1;
+    %pushi/vec4 35, 0, 32;
+    %store/vec4 v000001b2e5a66b80_0, 0, 32;
+    %delay 20, 0;
+    %pushi/vec4 31, 0, 32;
+    %store/vec4 v000001b2e5a66b80_0, 0, 32;
+    %delay 20, 0;
+    %end;
+    .thread T_2;
+    .scope S_000001b2e5a6c650;
+T_3 ;
+    %delay 100, 0;
+    %vpi_call 2 42 "$finish" {0 0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "DataMem_tb.sv";
+    "./DataMem.sv";

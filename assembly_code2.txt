@@ -1,0 +1,12 @@
+addi $2 $0 10
+addi $3 $0 0
+addi $4 $0 1
+addi $5 $0 2
+loop:
+beq $2 $5 end
+add $6 $3 $4
+add $3 $4 $0
+add $4 $6 $0
+addi $5 $5 1
+j loop
+end:

@@ -1,0 +1,89 @@
+$date
+	Tue Oct 18 23:48:28 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module ControlUnit_tb $end
+$var wire 1 ! RegWrite $end
+$var wire 1 " RegDst $end
+$var wire 1 # MemWrite $end
+$var wire 1 $ MemToReg $end
+$var wire 1 % MemRead $end
+$var wire 1 & Jump $end
+$var wire 1 ' Branch $end
+$var wire 1 ( BEQFlag $end
+$var wire 1 ) ALUSrc $end
+$var wire 2 * ALUOp [1:0] $end
+$var reg 6 + opcode [5:0] $end
+$scope module uut $end
+$var wire 6 , opcode [5:0] $end
+$var reg 2 - ALUOp [1:0] $end
+$var reg 1 ) ALUSrc $end
+$var reg 1 ( BEQFlag $end
+$var reg 1 ' Branch $end
+$var reg 1 & Jump $end
+$var reg 1 % MemRead $end
+$var reg 1 $ MemToReg $end
+$var reg 1 # MemWrite $end
+$var reg 1 " RegDst $end
+$var reg 1 ! RegWrite $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10 -
+b0 ,
+b0 +
+b10 *
+0)
+x(
+0'
+0&
+0%
+0$
+0#
+1"
+1!
+$end
+#20
+1$
+1%
+0"
+1)
+b0 *
+b0 -
+b100011 +
+b100011 ,
+#40
+0!
+0$
+0%
+1#
+b101011 +
+b101011 ,
+#60
+1&
+b10 +
+b10 ,
+#80
+1(
+0&
+1'
+0)
+b1 *
+b1 -
+b100 +
+b100 ,
+#100
+0(
+b101 +
+b101 ,
+#120

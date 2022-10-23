@@ -1,0 +1,9 @@
+addi $1 $0 1
+addi $10 $0 1
+addi $2 $0 6
+loop:
+beq $1 $2 end
+mul $10 $10 $1
+addi $1 $1 1
+j loop
+end:

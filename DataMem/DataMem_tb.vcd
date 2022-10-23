@@ -1,0 +1,75 @@
+$date
+	Tue Oct 18 10:48:55 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module DataMem_tb $end
+$var wire 32 ! readData [31:0] $end
+$var reg 32 " address [31:0] $end
+$var reg 1 # clk $end
+$var reg 1 $ memRead $end
+$var reg 1 % memWrite $end
+$var reg 32 & writeData [31:0] $end
+$scope module uut $end
+$var wire 32 ' address [31:0] $end
+$var wire 1 # clk $end
+$var wire 1 $ memRead $end
+$var wire 1 % memWrite $end
+$var wire 32 ( writeData [31:0] $end
+$var reg 32 ) readData [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx )
+b10010 (
+b100011 '
+b10010 &
+1%
+0$
+0#
+b100011 "
+bx !
+$end
+#10
+1#
+#20
+0#
+b10101 &
+b10101 (
+b11111 "
+b11111 '
+#30
+1#
+#40
+0#
+b100011 "
+b100011 '
+1$
+0%
+#50
+b10010 !
+b10010 )
+1#
+#60
+0#
+b11111 "
+b11111 '
+#70
+b10101 !
+b10101 )
+1#
+#80
+0#
+#90
+1#
+#100
+0#

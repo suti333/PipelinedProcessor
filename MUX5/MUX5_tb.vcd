@@ -1,0 +1,40 @@
+$date
+	Tue Oct 18 22:19:11 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module MUX5_tb $end
+$var wire 5 ! out [4:0] $end
+$var reg 5 " i0 [4:0] $end
+$var reg 5 # i1 [4:0] $end
+$var reg 1 $ select $end
+$scope module uut $end
+$var wire 5 % i0 [4:0] $end
+$var wire 5 & i1 [4:0] $end
+$var wire 1 $ select $end
+$var reg 5 ' out [4:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1001 '
+b1111 &
+b1001 %
+0$
+b1111 #
+b1001 "
+b1001 !
+$end
+#20
+b1111 !
+b1111 '
+1$
+#40
